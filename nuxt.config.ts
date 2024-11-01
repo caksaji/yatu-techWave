@@ -13,7 +13,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
     'v-wave/nuxt',
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt'

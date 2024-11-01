@@ -1,8 +1,6 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-    <ErrorNoInternetConnection />
-  </NuxtLayout>
+  <NuxtPage />
+  <ErrorNoInternetConnection />
 </template>
 
 <script setup>
