@@ -11,13 +11,13 @@
         </div>
       </div>
       <div class="container pt-12">
-        <div class="flex gap-8 items-end justify-between">
+        <div class="flex flex-col gap-8 items-end justify-between sm:flex-row">
           <div>
             <div class="flex items-center gap-2">
-              <div class="h-px w-full max-w-8 bg-gray-200" />
+              <div class="flex-shrink-0 h-px w-full max-w-8 bg-gray-200" />
               <span class="flex-shrink-0">Singkatnya, kami spesialis</span>
             </div>
-            <div class="max-w-4xl text-6xl uppercase">
+            <div class="max-w-4xl text-5xl uppercase md:text-6xl">
               Data Science dan Pengembangan Produk AI
             </div>
           </div>
@@ -36,8 +36,8 @@
     </div>
     <div class="section about bg-gray-800 text-white">
       <div class="container py-24">
-        <div class="flex gap-8 items-end justify-between">
-          <div class="flex -space-x-20">
+        <div class="flex flex-col gap-8 justify-between sm:flex-row sm:items-end">
+          <div class="hidden -space-x-20 sm:flex">
             <div class="flex-shrink-0 border rounded-full border-white" style="height: calc(10rem - 2px); width: calc(10rem - 2px);" />
             <div class="flex flex-col flex-shrink-0 gap-3 justify-center h-40 w-60 rounded-full overflow-hidden" style="z-index: 1;">
               <div v-for="i in 13" :key="i" class="flex-shrink-0 h-px w-full bg-gray-400" />
