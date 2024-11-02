@@ -1,5 +1,5 @@
 <template>
-  <div v-if="error.statusCode === 404" class="flex flex-col items-center justify-center h-screen w-screen bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: 'url(/img/login.jpg)' }">
+  <div v-if="error.statusCode === 404" class="flex flex-col items-center justify-center h-screen w-screen bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: 'url(/img/illustration/hero.jpeg)' }">
     <div class="fixed top-0 h-screen w-screen bg-white/50" />
     <div class="relative max-w-sm px-4">
       <div class="font-bold text-center" style="font-size: 4rem;">
@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  <div v-if="error.statusCode === 500" class="flex flex-col items-center justify-center h-screen w-screen bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: 'url(/img/error-500.jpg)' }">
+  <div v-if="error.statusCode === 500" class="flex flex-col items-center justify-center h-screen w-screen bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: 'url(/img/illustration/hero.jpeg)' }">
     <div class="fixed top-0 h-screen w-screen bg-white/50" />
     <div class="relative max-w-sm px-4">
       <div class="font-bold text-center" style="font-size: 4rem;">
@@ -55,7 +55,7 @@ import SpButton from '~/components/partial/SpButton'
 
 defineProps(['error'])
 
-const resolveStep404 = ['Tetap tenang', 'Tarik nafas', 'Minum air', 'Istirahat sejenak', 'Lalu']
+const resolveStep404 = ['Tetap tenang', 'Tarik nafas', 'Minum air', 'Istirahat sejenak', '']
 const resolveStep500 = ['Tetap tenang', 'Tarik nafas', 'Minum air', 'Istirahat sejenak', 'Lalu hubungi admin']
 
 const goToHome = () => navigateTo('/', { replace: true })
