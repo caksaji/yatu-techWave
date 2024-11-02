@@ -16,10 +16,17 @@
             <SectionTitle text="Data Science dan Pengembangan Produk AI" class="max-w-4xl" />
           </div>
           <div class="flex">
-            <SpButton color="white" size="lg" border round>
+            <SpButton color="white" size="lg" border round @click="sectionService.scrollIntoView()">
               Cari tahu
             </SpButton>
-            <SpButton tabindex="-1" color="white" size="lg" icon-only round>
+            <SpButton
+              tabindex="-1"
+              color="white"
+              size="lg"
+              icon-only
+              round
+              @click="sectionService.scrollIntoView()"
+            >
               <template #icon>
                 <IconSvg name="arrow-right" class="h-5 w-5" />
               </template>
@@ -61,7 +68,7 @@
         </div>
       </div>
     </div>
-    <div class="section service bg-gradient-to-br from-white via-prime-200 to-gray-100">
+    <div ref="sectionService" class="section service bg-gradient-to-br from-white via-prime-200 to-gray-100">
       <div class="container relative py-24">
         <OrnamentDotCircle color="gray-900" class="absolute top-12 right-0 transform translate-x-1/3 opacity-10" />
         <div class="relative">
@@ -84,7 +91,7 @@
                   </div>
                 </div>
                 <div class="flex justify-end w-full">
-                  <SpButton color="white" border round>
+                  <SpButton color="white" border round @click="startDiscuss(s.name)">
                     Cari tahu
                     <template #icon>
                       <IconSvg name="arrow-right" class="h-5 w-5" />
@@ -106,7 +113,7 @@
                 <div class="flex">
                   <div class="flex-shrink-0 relative">
                     <div class="absolute top-0 left-0 h-full w-full border-2 border-prime-600 rounded-full blur-sm animate-ping" />
-                    <SpButton color="prime" size="lg" border round>
+                    <SpButton color="prime" size="lg" border round @click="startDiscuss">
                       Hubungi kami
                     </SpButton>
                   </div>
@@ -213,7 +220,14 @@
         <div class="flex justify-center">
           <div class="relative">
             <div class="absolute top-0 left-0 h-full w-full border-2 border-white rounded-full blur-sm animate-ping" />
-            <SpButton color="white" size="lg" border round class="uppercase">
+            <SpButton
+              color="white"
+              size="lg"
+              border
+              round
+              class="uppercase"
+              @click="startDiscuss"
+             >
               Sekarang
             </SpButton>
           </div>
@@ -229,6 +243,7 @@ import SpButton from '~/components/partial/SpButton'
 import IconSvg from '~/components/partial/IconSvg'
 import OrnamentDotCircle from '~/components/partial/OrnamentDotCircle'
 
+const sectionService = ref()
 const socMed = [
   { icon: 'linkedin', link: 'https://linkedin.com' },
   { icon: 'x', link: 'https://x.com' },
@@ -291,4 +306,5 @@ const testionial = [
 ]
 
 const openLink = (link) => window.open(link)
+const startDiscuss = (about = null) => window.open(`https://wa.me/6281111111111?text=Halo%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20layanan%20${about ? "*" + about + "*" : 'yang%20tersedia'}%2C%20bisakah%20kita%20mulai%20diskusi%3F`)
 </script>
