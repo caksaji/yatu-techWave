@@ -164,8 +164,45 @@
         </div>
       </div>
     </div>
-    <div class="section testimonial">
-      Testimonial
+    <div class="section testimonial bg-gradient-to-br from-white via-gray-400 to-gray-100">
+      <div class="container py-24">
+        <div class="flex items-center gap-2">
+          <div class="flex-shrink-0 h-px w-full max-w-8 bg-gray-900" />
+          <span class="flex-shrink-0">Jangan ragu untuk memilih kami</span>
+        </div>
+        <SectionTitle text="Buktikan Sendiri Apa yang Client Kami Katakan"  class="max-w-6xl"/>
+        <div class="flex flex-wrap items-start justify-center pt-12 -m-2">
+          <div v-for="(t, i) in testionial" :key="i" class="flex-shrink-0 h-full w-full p-2 sm:w-1/2 md:w-1/3">
+            <div tabindex="0" class="flex flex-col justify-between h-full py-12 px-4 rounded-xl outline-0 bg-gray-200 duration-300 hover:scale-105 hover:shadow-lg focus:scale-105 focus:shadow-lg lg:px-8 xl:px-12">
+              <div>
+                <div class="flex gap-4 items-start justify-between">
+                  <div class="flex-shrink-0 h-16 aspect-square rounded-full bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: `url(/img/testimonial/${t.photo})` }" />
+                  <div class="flex-shrink-0 p-4 border border-gray-700 rounded-full bg-white">
+                    <div class="h-8 w-24 bg-contain bg-center bg-no-repeat" :style="{ backgroundImage: `url(/img/testimonial/${t.company})` }" />
+                  </div>
+                </div>
+                <div class="pt-12">
+                  <div class="flex transform scale-75 origin-top-left">
+                    <div v-for="i in 2" :key="2" class="flex-shrink-0 h-0 w-0" style="border-width: 3rem 1rem 0 1rem; border-style: solid; border-color: #60a5fa transparent transparent transparent; transform: skewX(calc(45deg / -2));" />
+                  </div>
+                </div>
+                <div class="text-3xl font-medium md:text-2xl" style="word-spacing: .5ch;">
+                  {{ t.said }}
+                </div>
+              </div>
+              <div class="pt-12">
+                <div class="h-1 w-24 rounded-full bg-gray-400" />
+                <div class="pt-2 text-xl font-medium">
+                  {{ t.name }}
+                </div>
+                <div class="pt-1">
+                  {{ t.role }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -211,6 +248,29 @@ const benefit = [
   {
     name: 'Penghematan Biaya',
     description: 'Penerapan solusi AI dapat mengurangi biaya operasional dengan meminimalkan kesalahan manusia dan mempercepat proses. Seiring waktu, ini menghasilkan penghematan signifikan, terutama untuk tugas yang memerlukan banyak tenaga kerja'
+  }
+]
+const testionial = [
+  {
+    name: 'Almia Ratih',
+    photo: 'avatar-1.jpg',
+    said: 'Hasil pekerjaan memberikan solusi yang sesuai dengan kebutuhan spesifik kami',
+    role: 'Manajer Bisnis',
+    company: 'company-1.png'
+  },
+  {
+    name: 'Johan W. Maleo',
+    photo: 'avatar-2.jpg',
+    said: 'Bukan hanya hasil pekerjaan, namun manajemen jadwal pekerjaannya juga sangat memuaskan',
+    role: 'Manajer Operasional',
+    company: 'company-2.png'
+  },
+  {
+    name: 'Arhim Verdha',
+    photo: 'avatar-3.jpg',
+    said: 'Tidak salah untuk mempercayakan kebutuhan kami kepada TechWave, hasilnya sangat memuaskan',
+    role: 'Manajer Umum',
+    company: 'company-3.png'
   }
 ]
 
