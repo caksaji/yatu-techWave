@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   tailwindcss: { viewer: false },
   googleFonts: {
     families: {
+      Poppins: {
+        wght: [500]
+      },
       Raleway: {
         wght: [400, 500, 600, 700]
       }

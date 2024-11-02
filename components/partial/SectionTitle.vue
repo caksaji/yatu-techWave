@@ -1,5 +1,5 @@
 <template>
-  <div class="text-5xl uppercase font-medium md:text-6xl" style="word-spacing: .5ch;">
+  <div class="text-5xl uppercase font-medium md:text-6xl" style="font-family: 'Poppins', sans-serif; word-spacing: .5ch;">
     {{ props.text }}
   </div>
 </template>

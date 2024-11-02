@@ -74,7 +74,7 @@
             <span class="flex-shrink-0">Selanjutnya,</span>
           </div>
           <SectionTitle text="Inilah Solusi yang Kami Tawarkan atas Masalah Anda"  class="max-w-6xl"/>
-          <div class="flex flex-wrap w-full pt-12 md:flex-nowrap">
+          <div class="flex gap-4 flex-wrap w-full pt-12 md:flex-nowrap sm:gap-0">
             <div v-for="(s, i) in mainService" :key="i" class="w-full transform duration-300 group sm:w-1/2 md:w-1/4 md:hover:w-2/4">
               <div class="flex gap-4 flex-col justify-between h-full w-full pt-12 pb-4 px-4 border border-gray-900 rounded-xl text-white" :class="{ 'bg-gray-500': i === 0, 'bg-gray-900': i === 1, 'bg-prime-700': i === 2, 'bg-prime-500': i === 3 }">
                 <div class="space-y-4">
@@ -124,7 +124,45 @@
       </div>
     </div>
     <div class="section benefit bg-gray-900 text-white">
-      Benefit of using AI
+      <div class="container relative py-24">
+        <div class="absolute top-12 -left-1/3 h-[60rem] w-[60rem] border-4 border-white rounded-full opacity-25 blur-sm" />
+        <div class="relative">
+          <div class="flex items-center gap-2">
+            <div class="flex-shrink-0 h-px w-full max-w-8 bg-white" />
+            <span class="flex-shrink-0">Tapi kenapa?</span>
+          </div>
+          <SectionTitle text="Inilah Manfaat Implementasi AI dengan Usaha Anda"  class="max-w-6xl"/>
+          <div class="pt-12">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:grid-rows-2 sm:grid-flow-col sm:grid-cols-none lg:grid-flow-row lg:grid-cols-2 lg:grid-rows-none">
+              <div
+                v-for="(b, i) in benefit"
+                :key="i"
+                class="col-span-1"
+                :class="{
+                  'sm:row-span-2 lg:col-span-2': i === 0,
+                  'sm:row-span-1 lg:col-span-1': i === 1,
+                  'sm:row-span-1 lg:col-span-1': i === 2
+                }"
+              >
+                <div tabindex="0" class="relative h-full py-12 px-4 border border-white rounded-xl outline-0 overflow-hidden transform duration-300 group hover:scale-105 focus:scale-105 sm:px-8 md:px-12">
+                  <div class="absolute top-0 left-0 h-full w-full transform rotate-90 duration-300 origin-top-left bg-gradient-to-br from-prime-400 to-prime-800 group-hover:rotate-0 group-focus:rotate-0" />
+                  <div class="relative">
+                    <div class="text-3xl uppercase font-medium md:text-2xl" style="word-spacing: .5ch;">
+                      {{ b.name }}
+                    </div>
+                    <div class="flex flex-col gap-4 justify-between h-full lg:flex-row">
+                      <div class="w-full pt-4" :class="{ 'lg:w-1/3': i === 0 }">
+                        {{ b.description }}
+                      </div>
+                      <div v-if="i === 0" class="hidden sm:block flex-shrink-0 aspect-square bg-contain bg-bottom bg-no-repeat lg:max-h-60 lg:w-1/2 lg:aspect-video lg:bg-right" :style="{ backgroundImage: 'url(/img/automation.svg)' }" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section testimonial">
       Testimonial
@@ -159,6 +197,20 @@ const mainService = [
   {
     name: 'Arsitektur Digital',
     description: 'Kami merancang kerangka digital yang kuat untuk terintegrasi dengan sistem anda, meningkatkan kinerja, dan mendukung inovasi di masa depan'
+  }
+]
+const benefit = [
+  {
+    name: 'Efisiensi',
+    description: 'Dengan mengotomatiskan tugas rutin, seperti entri data atau pertanyaan pelanggan, AI menghemat waktu berharga untuk karyawan. Ini memungkinkan tim fokus pada perencanaan strategis, kreativitas, dan pemecahan masalah, yang meningkatkan produktivitas secara keseluruhan'
+  },
+  {
+    name: 'Analisis Data',
+    description: 'AI dapat menganalisis dataset kompleks secara real-time, mengungkap pola dan tren yang mungkin tidak terlihat jelas. Kemampuan ini sangat berguna untuk peramalan pasar, di mana wawasan yang tepat waktu dapat memandu strategi bisnis yang krusial'
+  },
+  {
+    name: 'Penghematan Biaya',
+    description: 'Penerapan solusi AI dapat mengurangi biaya operasional dengan meminimalkan kesalahan manusia dan mempercepat proses. Seiring waktu, ini menghasilkan penghematan signifikan, terutama untuk tugas yang memerlukan banyak tenaga kerja'
   }
 ]
 
