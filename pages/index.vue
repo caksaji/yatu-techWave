@@ -1,13 +1,9 @@
 <template>
   <div>
-    <div class="section hero bg-gray-900 text-white">
-      <div class="max-w-screen-xl p-4 mx-auto">
-        <div class="rounded-xl bg-cover bg-center bg-no-repeat bg-prime-500">
-          <div class="container pt-48 pb-12">
-            <div class="w-52 text-xl font-medium">
-              Kombinasi yang powerfull antara data science & software development
-            </div>
-          </div>
+    <div class="section hero pt-4 bg-gray-900 text-white">
+      <div class="container pt-48 pb-12 rounded-xl bg-cover bg-center bg-no-repeat bg-prime-500">
+        <div class="w-52 text-xl font-medium">
+          Kombinasi yang powerfull antara data science & software development
         </div>
       </div>
       <div class="container pt-12">
@@ -65,7 +61,7 @@
         </div>
       </div>
     </div>
-    <div class="section service">
+    <div class="section service bg-gradient-to-br from-white via-prime-200 to-gray-100">
       <div class="container relative py-24">
         <OrnamentDotCircle color="gray-900" class="absolute top-12 right-0 transform translate-x-1/3 opacity-10" />
         <div class="relative">
@@ -108,10 +104,13 @@
                   Butuh diskusi?
                 </div>
                 <div class="flex">
-                  <SpButton color="black" size="lg" border round>
-                    Hubungi kami
-                  </SpButton>
-                  <SpButton tabindex="-1" color="black" size="lg" icon-only round>
+                  <div class="flex-shrink-0 relative">
+                    <div class="absolute top-0 left-0 h-full w-full border-2 border-prime-600 rounded-full blur-sm animate-ping" />
+                    <SpButton color="prime" size="lg" border round>
+                      Hubungi kami
+                    </SpButton>
+                  </div>
+                  <SpButton tabindex="-1" color="prime" size="lg" icon-only round>
                     <template #icon>
                       <IconSvg name="arrow-right" class="h-5 w-5" />
                     </template>
@@ -125,7 +124,7 @@
     </div>
     <div class="section benefit bg-gray-900 text-white">
       <div class="container relative py-24">
-        <div class="absolute top-12 -left-1/3 h-[60rem] w-[60rem] border-4 border-white rounded-full opacity-25 blur-sm" />
+        <div class="absolute top-12 -left-1/4 h-[57rem] w-[57rem] border-4 border-prime-600 rounded-full opacity-50 blur-sm sm:top-20 sm:-left-1/2 md:-left-1/3" />
         <div class="relative">
           <div class="flex items-center gap-2">
             <div class="flex-shrink-0 h-px w-full max-w-8 bg-white" />
@@ -144,7 +143,8 @@
                   'sm:row-span-1 lg:col-span-1': i === 2
                 }"
               >
-                <div tabindex="0" class="relative h-full py-12 px-4 border border-white rounded-xl outline-0 overflow-hidden transform duration-300 group hover:scale-105 focus:scale-105 sm:px-8 md:px-12">
+                <div tabindex="0" class="relative h-full py-12 px-4 border border-white/25 rounded-xl outline-0 overflow-hidden transform duration-300 group backdrop-filter backdrop-blur hover:scale-105 focus:scale-105 sm:px-8 md:px-12">
+                  <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-br from-white to-prime-700 opacity-20 backdrop-filter backdrop-blur" />
                   <div class="absolute top-0 left-0 h-full w-full transform rotate-90 duration-300 origin-top-left bg-gradient-to-br from-prime-400 to-prime-800 group-hover:rotate-0 group-focus:rotate-0" />
                   <div class="relative">
                     <div class="text-3xl uppercase font-medium md:text-2xl" style="word-spacing: .5ch;">
@@ -187,15 +187,15 @@ const mainService = [
     description: 'Kami menganalisis kebutuhan bisnis anda untuk mengidentifikasi peluang, menyederhanakan proses, dan meningkatkan efisiensi demi pertumbuhan yang berkelanjutan'
   },
   {
-    name: 'Peramalan Pasar',
+    name: 'Forecast',
     description: 'Dengan wawasan berbasis data, kami memprediksi tren pasar untuk membantu keputusan strategis dan mengoptimalkan posisi kompetitif bisnis anda'
   },
   {
-    name: 'Pembuatan Software',
+    name: 'Software',
     description: 'Tim kami menciptakan solusi perangkat lunak kustom yang disesuaikan dengan kebutuhan unik anda, menjamin fungsionalitas dan pengalaman pengguna yang baik'
   },
   {
-    name: 'Arsitektur Digital',
+    name: 'Sistem Digital',
     description: 'Kami merancang kerangka digital yang kuat untuk terintegrasi dengan sistem anda, meningkatkan kinerja, dan mendukung inovasi di masa depan'
   }
 ]

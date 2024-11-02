@@ -74,14 +74,14 @@ const formatedStyle = computed(() => {
     }
   }
   if (props.size === 'lg') {
-    if ((props.border || (props.color === 'white' || props.color === 'black')) && !props.iconOnly) {
+    if (props.border && !props.iconOnly) {
       formattedPadding = `calc((${fragmentedRem} * 6) - 1px) calc((${fragmentedRem} * 10) - 1px)`
     }
-    else if ((props.border || (props.color === 'white' || props.color === 'black')) && props.iconOnly) {
+    else if (props.border && props.iconOnly) {
       formattedPadding = `calc((${fragmentedRem} * 6) - 1px)`
     }
-    else if (!props.border && (props.color !== 'white' && props.color !== 'black') && props.iconOnly) {
-      formattedPadding = `calc(${fragmentedRem})`
+    else if (!props.border && props.iconOnly) {
+      formattedPadding = `calc(${fragmentedRem} * 6)`
     }
     else {
       formattedPadding = `calc(${fragmentedRem} * 6) calc(${fragmentedRem} * 10)`
