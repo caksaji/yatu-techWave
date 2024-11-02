@@ -51,16 +51,39 @@
           <div class="max-w-xs space-y-4 text-xl font-medium">
             <div class="flex gap-2">
               <SpButton
-                v-for="(s, i) in socMed"
-                :key="i"
+                v-if="contactStore.all?.linkedin"
                 color="white"
                 icon-only
                 border
                 round
-                @click="openLink(s.link)"
+                @click="openLink(contactStore.all.linkedin)"
               >
                 <template #icon>
-                  <IconSvg :name="s.icon" class="h-5 w-5" />
+                  <IconSvg name="linkedin" class="h-5 w-5" />
+                </template>
+              </SpButton>
+              <SpButton
+                v-if="contactStore.all?.x"
+                color="white"
+                icon-only
+                border
+                round
+                @click="openLink(contactStore.all.x)"
+              >
+                <template #icon>
+                  <IconSvg name="x" class="h-5 w-5" />
+                </template>
+              </SpButton>
+              <SpButton
+                v-if="contactStore.all?.instagram"
+                color="white"
+                icon-only
+                border
+                round
+                @click="openLink(contactStore.all.instagram)"
+              >
+                <template #icon>
+                  <IconSvg name="instagram" class="h-5 w-5" />
                 </template>
               </SpButton>
             </div>
@@ -81,7 +104,7 @@
           </div>
           <SectionTitle text="Inilah Solusi yang Kami Tawarkan atas Masalah Anda"  class="max-w-6xl"/>
           <div class="flex gap-4 flex-wrap w-full pt-12 md:flex-nowrap sm:gap-0">
-            <div v-for="(s, i) in mainService" :key="i" class="w-full transform duration-300 group sm:w-1/2 md:w-1/4 md:hover:w-2/4">
+            <div v-for="(s, i) in serviceStore.main" :key="i" class="w-full transform duration-300 group sm:w-1/2 md:w-1/4 md:hover:w-2/4">
               <div class="flex gap-4 flex-col justify-between h-full w-full pt-12 pb-4 px-4 border border-gray-900 rounded-xl text-white" :class="{ 'bg-gray-500': i === 0, 'bg-gray-900': i === 1, 'bg-prime-700': i === 2, 'bg-prime-500': i === 3 }">
                 <div class="space-y-4">
                   <div class="text-3xl uppercase font-medium md:text-2xl" style="word-spacing: .5ch;">
@@ -144,7 +167,7 @@
           <div class="pt-12">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:grid-rows-2 sm:grid-flow-col sm:grid-cols-none lg:grid-flow-row lg:grid-cols-2 lg:grid-rows-none">
               <div
-                v-for="(b, i) in benefit"
+                v-for="(b, i) in benefitStore.all"
                 :key="i"
                 class="col-span-1"
                 :class="{
@@ -182,7 +205,7 @@
         </div>
         <SectionTitle text="Buktikan Sendiri Apa yang Client Kami Katakan"  class="max-w-6xl"/>
         <div class="flex flex-wrap items-start justify-center pt-12 -m-2">
-          <div v-for="(t, i) in testionial" :key="i" class="flex-shrink-0 h-full w-full p-2 sm:w-1/2 md:w-1/3">
+          <div v-for="(t, i) in testimonialStore.all" :key="i" class="flex-shrink-0 h-full w-full p-2 sm:w-1/2 md:w-1/3">
             <div tabindex="0" class="flex flex-col justify-between h-full py-12 px-4 rounded-xl outline-0 bg-gray-200 duration-300 hover:scale-105 hover:shadow-lg focus:scale-105 focus:shadow-lg lg:px-8 xl:px-12">
               <div>
                 <div class="flex gap-4 items-start justify-between">
@@ -246,67 +269,26 @@ import SpButton from '~/components/partial/SpButton'
 import IconSvg from '~/components/partial/IconSvg'
 import OrnamentDotCircle from '~/components/partial/OrnamentDotCircle'
 
+const contactStore = useContactStore()
+const serviceStore = useServiceStore()
+const benefitStore = useBenefitStore()
+const testimonialStore = useTestimonialStore()
 const sectionService = ref()
-const socMed = [
-  { icon: 'linkedin', link: 'https://linkedin.com' },
-  { icon: 'x', link: 'https://x.com' },
-  { icon: 'instagram', link: 'https://instagram.com' }
-]
-const mainService = [
-  {
-    name: 'Analisa Bisnis',
-    description: 'Kami menganalisis kebutuhan bisnis anda untuk mengidentifikasi peluang, menyederhanakan proses, dan meningkatkan efisiensi demi pertumbuhan yang berkelanjutan'
-  },
-  {
-    name: 'Forecast',
-    description: 'Dengan wawasan berbasis data, kami memprediksi tren pasar untuk membantu keputusan strategis dan mengoptimalkan posisi kompetitif bisnis anda'
-  },
-  {
-    name: 'Software',
-    description: 'Tim kami menciptakan solusi perangkat lunak kustom yang disesuaikan dengan kebutuhan unik anda, menjamin fungsionalitas dan pengalaman pengguna yang baik'
-  },
-  {
-    name: 'Sistem Digital',
-    description: 'Kami merancang kerangka digital yang kuat untuk terintegrasi dengan sistem anda, meningkatkan kinerja, dan mendukung inovasi di masa depan'
+
+onMounted(async () => {
+  if (!contactStore.all) {
+    await contactStore.getAll()
   }
-]
-const benefit = [
-  {
-    name: 'Efisiensi',
-    description: 'Dengan mengotomatiskan tugas rutin, seperti entri data atau pertanyaan pelanggan, AI menghemat waktu berharga untuk karyawan. Ini memungkinkan tim fokus pada perencanaan strategis, kreativitas, dan pemecahan masalah, yang meningkatkan produktivitas secara keseluruhan'
-  },
-  {
-    name: 'Analisis Data',
-    description: 'AI dapat menganalisis dataset kompleks secara real-time, mengungkap pola dan tren yang mungkin tidak terlihat jelas. Kemampuan ini sangat berguna untuk peramalan pasar, di mana wawasan yang tepat waktu dapat memandu strategi bisnis yang krusial'
-  },
-  {
-    name: 'Penghematan Biaya',
-    description: 'Penerapan solusi AI dapat mengurangi biaya operasional dengan meminimalkan kesalahan manusia dan mempercepat proses. Seiring waktu, ini menghasilkan penghematan signifikan, terutama untuk tugas yang memerlukan banyak tenaga kerja'
+  if (serviceStore.main.length < 1) {
+    await serviceStore.getMain()
   }
-]
-const testionial = [
-  {
-    name: 'Almia Ratih',
-    photo: 'avatar-1.jpg',
-    said: 'Hasil pekerjaan memberikan solusi yang sesuai dengan kebutuhan spesifik kami',
-    role: 'Manajer Bisnis',
-    company: 'company-1.png'
-  },
-  {
-    name: 'Johan W. Maleo',
-    photo: 'avatar-2.jpg',
-    said: 'Bukan hanya hasil pekerjaan, namun manajemen jadwal pekerjaannya juga sangat memuaskan',
-    role: 'Manajer Operasional',
-    company: 'company-2.png'
-  },
-  {
-    name: 'Arhim Verdha',
-    photo: 'avatar-3.jpg',
-    said: 'Tidak salah untuk mempercayakan kebutuhan kami kepada TechWave, hasilnya sangat memuaskan',
-    role: 'Manajer Umum',
-    company: 'company-3.png'
+  if (benefitStore.all.length < 1) {
+    await benefitStore.getAll()
   }
-]
+  if (testimonialStore.all.length < 1) {
+    await testimonialStore.getAll()
+  }
+})
 
 const openLink = (link) => window.open(link)
 const startDiscuss = (about = null) => window.open(`https://wa.me/6281111111111?text=Halo%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20layanan%20${about ? "*" + about + "*" : 'yang%20tersedia'}%2C%20bisakah%20kita%20mulai%20diskusi%3F`)
