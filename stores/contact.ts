@@ -1,5 +1,5 @@
 export const useContactStore = defineStore('contact', () => {
-  const all = ref({})
+  const all = ref(null)
 
   const setAll = data => all.value = data
 
@@ -11,7 +11,7 @@ export const useContactStore = defineStore('contact', () => {
         instagram: 'https://instagram.com'
       })
     }
-    catch (error) { setAll({}) }
+    catch (error) { setAll(null) }
   }
 
   return {

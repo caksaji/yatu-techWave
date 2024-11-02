@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'v-wave/nuxt',
     '@nuxtjs/google-fonts',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    'nuxt-aos'
   ],
   alias: { pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs' },
   tailwindcss: { viewer: false },

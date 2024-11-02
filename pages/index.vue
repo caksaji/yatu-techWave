@@ -2,9 +2,9 @@
   <div>
     <div class="section hero pt-4 bg-gray-900 text-white">
       <div class="container">
-        <div class="relative pt-48 pb-12 px-4 rounded-xl overflow-hidden bg-prime-500">
+        <div data-aos="fade-up" class="relative pt-48 pb-12 px-4 rounded-xl overflow-hidden bg-prime-500">
           <div class="absolute top-0 left-0 h-full w-full bg-cover bg-center bg-no-repeat mix-blend-color-burn" :style="{ backgroundImage: 'url(/img/illustration/hero.jpeg)' }" />
-          <div class="relative w-52 text-xl font-medium">
+          <div data-aos="fade-up" data-aos-delay="150" class="relative w-52 text-xl font-medium">
             Kombinasi yang powerful antara data science & software development
           </div>
         </div>
@@ -12,13 +12,13 @@
       <div class="container pt-12">
         <div class="flex flex-col gap-8 items-end justify-between sm:flex-row">
           <div>
-            <div class="flex items-center gap-2">
+            <div data-aos="fade-right" data-aos-delay="400" class="flex items-center gap-2">
               <div class="flex-shrink-0 h-px w-full max-w-8 bg-white" />
               <span class="flex-shrink-0">Singkatnya, kami spesialis</span>
             </div>
-            <SectionTitle text="Data Science dan Pengembangan Produk AI" class="max-w-4xl" />
+            <SectionTitle data-aos="fade-up" data-aos-delay="550" text="Data Science dan Pengembangan Produk AI" class="max-w-4xl" />
           </div>
-          <div class="flex">
+          <div data-aos="fade-right" data-aos-delay="850" class="flex">
             <SpButton color="white" size="lg" border round @click="sectionService.scrollIntoView()">
               Cari tahu
             </SpButton>
@@ -42,16 +42,17 @@
       <div class="container py-24">
         <div class="flex flex-col gap-8 justify-between pt-24 border-t border-dashed border-gray-600 sm:flex-row sm:items-end">
           <div class="hidden -space-x-20 sm:flex">
-            <div class="flex-shrink-0 border rounded-full border-white" style="height: calc(10rem - 2px); width: calc(10rem - 2px);" />
+            <div data-aos="fade-up" class="flex-shrink-0 border rounded-full border-white" style="height: calc(10rem - 2px); width: calc(10rem - 2px);" />
             <div class="flex flex-col flex-shrink-0 gap-3 justify-center h-40 w-60 rounded-full overflow-hidden" style="z-index: 1;">
-              <div v-for="i in 13" :key="i" class="flex-shrink-0 h-px w-full bg-gray-400" />
+              <div v-for="i in 13" :key="i" data-aos="fade-right" :data-aos-delay="50 * i" class="flex-shrink-0 h-px w-full bg-gray-400" />
             </div>
-            <div class="flex-shrink-0 h-40 w-40 rounded-full bg-white" />
+            <div data-aos="fade-up" data-aos-delay="150" class="flex-shrink-0 h-40 w-40 rounded-full bg-white" />
           </div>
           <div class="max-w-xs space-y-4 text-xl font-medium">
             <div class="flex gap-2">
               <SpButton
                 v-if="contactStore.all?.linkedin"
+                data-aos="fade-up"
                 color="white"
                 icon-only
                 border
@@ -64,6 +65,8 @@
               </SpButton>
               <SpButton
                 v-if="contactStore.all?.x"
+                data-aos="fade-up"
+                data-aos-delay="150"
                 color="white"
                 icon-only
                 border
@@ -76,6 +79,8 @@
               </SpButton>
               <SpButton
                 v-if="contactStore.all?.instagram"
+                data-aos="fade-up"
+                data-aos-delay="300"
                 color="white"
                 icon-only
                 border
@@ -87,7 +92,7 @@
                 </template>
               </SpButton>
             </div>
-            <div>
+            <div data-aos="fade-right" data-aos-delay="600">
               Kami menciptakan produk berdasarkan data science dan diperkuat dengan machine learning untuk memberikan solusi atas masalah yang ada
             </div>
           </div>
@@ -98,12 +103,12 @@
       <div class="container relative py-24">
         <OrnamentDotCircle color="gray-900" class="absolute top-12 right-0 transform translate-x-1/3 opacity-10" />
         <div class="relative">
-          <div class="flex items-center gap-2">
+          <div data-aos="fade-right" class="flex items-center gap-2">
             <div class="flex-shrink-0 h-px w-full max-w-8 bg-gray-900" />
             <span class="flex-shrink-0">Selanjutnya,</span>
           </div>
-          <SectionTitle text="Inilah Solusi yang Kami Tawarkan atas Masalah Anda"  class="max-w-6xl"/>
-          <div class="flex gap-4 flex-wrap w-full pt-12 md:flex-nowrap sm:gap-0">
+          <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Inilah Solusi yang Kami Tawarkan atas Masalah Anda"  class="max-w-6xl"/>
+          <div data-aos="fade-up" class="flex gap-4 flex-wrap w-full pt-12 md:flex-nowrap sm:gap-0">
             <div v-for="(s, i) in serviceStore.main" :key="i" class="w-full transform duration-300 group sm:w-1/2 md:w-1/4 md:hover:w-2/4">
               <div class="flex gap-4 flex-col justify-between h-full w-full pt-12 pb-4 px-4 border border-gray-900 rounded-xl text-white" :class="{ 'bg-gray-500': i === 0, 'bg-gray-900': i === 1, 'bg-prime-700': i === 2, 'bg-prime-500': i === 3 }">
                 <div class="space-y-4">
@@ -128,15 +133,15 @@
             </div>
           </div>
           <div class="flex flex-col gap-8 justify-between pt-12 sm:flex-row sm:items-end">
-            <div class="max-w-xs text-xl">
+            <div data-aos="fade-up" class="max-w-xs text-xl">
               Dengan pengalaman melalui banyak studi kasus, kami percaya dapat memberikan solusi tebaik atas masalah anda
             </div>
             <div class="flex w-full justify-end">
               <div class="space-y-2">
-                <div class="text-xl">
+                <div data-aos="fade-up" data-aos-delay="300" class="text-xl">
                   Butuh diskusi?
                 </div>
-                <div class="flex">
+                <div data-aos="fade-right" data-aos-delay="600" class="flex">
                   <div class="flex-shrink-0 relative">
                     <div class="absolute top-0 left-0 h-full w-full border-2 border-prime-600 rounded-full blur-sm animate-ping" />
                     <SpButton color="prime" size="lg" border round @click="startDiscuss">
@@ -159,16 +164,18 @@
       <div class="container relative py-24">
         <div class="absolute top-12 -left-1/4 h-[57rem] w-[57rem] border-4 border-prime-600 rounded-full opacity-50 blur-sm sm:top-20 sm:-left-1/2 md:-left-1/3" />
         <div class="relative">
-          <div class="flex items-center gap-2">
+          <div data-aos="fade-right" class="flex items-center gap-2">
             <div class="flex-shrink-0 h-px w-full max-w-8 bg-white" />
             <span class="flex-shrink-0">Tapi kenapa?</span>
           </div>
-          <SectionTitle text="Inilah Manfaat Implementasi AI dengan Usaha Anda"  class="max-w-6xl"/>
+          <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Inilah Manfaat Implementasi AI dengan Usaha Anda"  class="max-w-6xl"/>
           <div class="pt-12">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:grid-rows-2 sm:grid-flow-col sm:grid-cols-none lg:grid-flow-row lg:grid-cols-2 lg:grid-rows-none">
               <div
                 v-for="(b, i) in benefitStore.all"
                 :key="i"
+                data-aos="fade-up"
+                :data-aos-delay="(100 * i) + 450"
                 class="col-span-1"
                 :class="{
                   'sm:row-span-2 lg:col-span-2': i === 0,
@@ -199,13 +206,13 @@
     </div>
     <div class="section testimonial bg-gradient-to-br from-white via-gray-400 to-gray-100">
       <div class="container py-24">
-        <div class="flex items-center gap-2">
+        <div data-aos="fade-right" class="flex items-center gap-2">
           <div class="flex-shrink-0 h-px w-full max-w-8 bg-gray-900" />
           <span class="flex-shrink-0">Jangan ragu untuk memilih kami</span>
         </div>
-        <SectionTitle text="Buktikan Sendiri Apa yang Client Kami Katakan"  class="max-w-6xl"/>
+        <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Buktikan Sendiri Apa yang Client Kami Katakan"  class="max-w-6xl"/>
         <div class="flex flex-wrap items-start justify-center pt-12 -m-2">
-          <div v-for="(t, i) in testimonialStore.all" :key="i" class="flex-shrink-0 h-full w-full p-2 sm:w-1/2 md:w-1/3">
+          <div v-for="(t, i) in testimonialStore.all" :key="i" data-aos="fade-up" :data-aos-delay="(100 * i) + 450" class="flex-shrink-0 h-full w-full p-2 sm:w-1/2 md:w-1/3">
             <div tabindex="0" class="flex flex-col justify-between h-full py-12 px-4 rounded-xl outline-0 bg-gray-200 duration-300 hover:scale-105 hover:shadow-lg focus:scale-105 focus:shadow-lg lg:px-8 xl:px-12">
               <div>
                 <div class="flex gap-4 items-start justify-between">
@@ -275,18 +282,18 @@ const benefitStore = useBenefitStore()
 const testimonialStore = useTestimonialStore()
 const sectionService = ref()
 
-onMounted(async () => {
+onMounted(() => {
   if (!contactStore.all) {
-    await contactStore.getAll()
+    contactStore.getAll()
   }
   if (serviceStore.main.length < 1) {
-    await serviceStore.getMain()
+    serviceStore.getMain()
   }
   if (benefitStore.all.length < 1) {
-    await benefitStore.getAll()
+    benefitStore.getAll()
   }
   if (testimonialStore.all.length < 1) {
-    await testimonialStore.getAll()
+    testimonialStore.getAll()
   }
 })
 

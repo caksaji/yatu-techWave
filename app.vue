@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LandingNavbar />
+    <LandingNavbar data-aos="fade-up" />
     <NuxtPage />
     <ErrorNoInternetConnection />
   </div>
