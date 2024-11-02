@@ -1,9 +1,12 @@
 <template>
   <div>
     <div class="section hero pt-4 bg-gray-900 text-white">
-      <div class="container pt-48 pb-12 rounded-xl bg-cover bg-center bg-no-repeat bg-prime-500">
-        <div class="w-52 text-xl font-medium">
-          Kombinasi yang powerfull antara data science & software development
+      <div class="container">
+        <div class="relative pt-48 pb-12 px-4 rounded-xl overflow-hidden bg-prime-500">
+          <div class="absolute top-0 left-0 h-full w-full bg-cover bg-center bg-no-repeat mix-blend-color-burn" :style="{ backgroundImage: 'url(/img/illustration/hero.jpeg)' }" />
+          <div class="relative w-52 text-xl font-medium">
+            Kombinasi yang powerful antara data science & software development
+          </div>
         </div>
       </div>
       <div class="container pt-12">
@@ -161,7 +164,7 @@
                       <div class="w-full pt-4" :class="{ 'lg:w-1/3': i === 0 }">
                         {{ b.description }}
                       </div>
-                      <div v-if="i === 0" class="hidden sm:block flex-shrink-0 aspect-square bg-contain bg-bottom bg-no-repeat lg:max-h-60 lg:w-1/2 lg:aspect-video lg:bg-right" :style="{ backgroundImage: 'url(/img/automation.svg)' }" />
+                      <div v-if="i === 0" class="hidden sm:block flex-shrink-0 aspect-square bg-contain bg-bottom bg-no-repeat lg:max-h-60 lg:w-1/2 lg:aspect-video lg:bg-right" :style="{ backgroundImage: 'url(/img/illustration/automation.svg)' }" />
                     </div>
                   </div>
                 </div>
