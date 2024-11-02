@@ -9,15 +9,15 @@
       'rounded-xl': !props.round,
       'rounded-full': props.round,
       'ring-offset-white': props.color !== 'white',
-      'ring-offset-gray-800 focus:ring-gray-200': props.color === 'white',
-      'text-gray-800 bg-gray-200 hover:bg-gray-300': props.color === 'white' && !props.border,
-      'focus:ring-gray-800': props.color === 'black',
-      'text-white bg-gray-800 hover:bg-gray-700': props.color === 'black' && !props.border,
+      'ring-offset-gray-900 focus:ring-gray-200': props.color === 'white',
+      'text-gray-900 bg-gray-200 hover:bg-gray-300': props.color === 'white' && !props.border,
+      'focus:ring-gray-900': props.color === 'black',
+      'text-white bg-gray-900 hover:bg-gray-700': props.color === 'black' && !props.border,
       'focus:ring-prime-700': props.color === 'prime',
       'text-white bg-prime-600 hover:bg-prime-700': props.color === 'prime' && !props.border,
       'border': props.border,
-      'text-gray-200 border-gray-200 hover:text-gray-800 focus:text-gray-800': props.color === 'white' && props.border,
-      'text-gray-800 border-gray-700 hover:text-white focus:text-white': props.color === 'black' && props.border,
+      'text-gray-200 border-gray-200 hover:text-gray-900 focus:text-gray-900': props.color === 'white' && props.border,
+      'text-gray-900 border-gray-700 hover:text-white focus:text-white': props.color === 'black' && props.border,
       'text-prime-600 border-prime-600 focus:text-white hover:bg-prime-600 hover:text-white': props.color === 'prime' && props.border
     }"
     style="line-height: 1.5; font-size: calc(1rem - 2px);"
@@ -29,13 +29,13 @@
       class="absolute -bottom-full left-0 h-full w-full transform duration-300 group-focus:-translate-y-full group-hover:-translate-y-full"
       :class="{
         'bg-gray-200': props.color === 'white',
-        'bg-gray-800': props.color === 'black',
+        'bg-gray-900': props.color === 'black',
         'bg-prime-600': props.color === 'prime'
       }"
     />
     <div class="flex relative items-center justify-center w-full space-x-2">
-      <slot name="icon" />
       <span v-if="!props.iconOnly"><slot /></span>
+      <slot name="icon" />
     </div>
   </button>
 </template>
