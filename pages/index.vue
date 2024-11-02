@@ -204,6 +204,22 @@
         </div>
       </div>
     </div>
+    <div class="section discuss bg-gradient-to-tr from-prime-600 via-prime-800 to-prime-600 text-white text-center">
+      <div class="container space-y-4 py-24">
+        <div>
+          Tunggu apa lagi?
+        </div>
+        <SectionTitle text="Mari Diskusikan Kebutuhan Anda" />
+        <div class="flex justify-center">
+          <div class="relative">
+            <div class="absolute top-0 left-0 h-full w-full border-2 border-white rounded-full blur-sm animate-ping" />
+            <SpButton color="white" size="lg" border round class="uppercase">
+              Sekarang
+            </SpButton>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
