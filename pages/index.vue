@@ -109,7 +109,7 @@
           </div>
           <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Inilah Solusi yang Kami Tawarkan atas Masalah Anda"  class="max-w-6xl"/>
           <div data-aos="fade-up" class="flex gap-4 flex-wrap w-full pt-12 md:flex-nowrap sm:gap-0">
-            <div v-for="(s, i) in serviceStore.main" :key="i" class="w-full transform duration-300 group sm:w-1/2 md:w-1/4 md:hover:w-2/4">
+            <div v-for="(s, i) in serviceStore.all" :key="i" class="w-full transform duration-300 group sm:w-1/2 md:w-1/4 md:hover:w-2/4">
               <div class="flex gap-4 flex-col justify-between h-full w-full pt-12 pb-4 px-4 border border-gray-900 rounded-xl text-white" :class="{ 'bg-gray-500': i === 0, 'bg-gray-900': i === 1, 'bg-prime-700': i === 2, 'bg-prime-500': i === 3 }">
                 <div class="space-y-4">
                   <div class="text-3xl uppercase font-medium md:text-2xl" style="word-spacing: .5ch;">
@@ -286,8 +286,8 @@ onMounted(() => {
   if (!contactStore.all) {
     contactStore.getAll()
   }
-  if (serviceStore.main.length < 1) {
-    serviceStore.getMain()
+  if (serviceStore.all.length < 1) {
+    serviceStore.getAll()
   }
   if (benefitStore.all.length < 1) {
     benefitStore.getAll()

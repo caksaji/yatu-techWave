@@ -7,8 +7,8 @@
           :key="i"
           v-wave
           tabindex="0"
-          class="flex flex-shrink-0 items-center justify-center p-4 rounded-full outline-0 ring-offset-2 ring-white ring-offset-gray-900 cursor-pointer duration-300 focus:ring lg:flex-col click-effect"
-          :class="{ 'bg-white text-gray-900': route.path === m.link, 'hover:bg-white/25': route.path !== m.link }"
+          class="flex flex-shrink-0 items-center justify-center p-4 rounded-full outline-0 ring-offset-2 ring-prime-500 ring-offset-gray-900 cursor-pointer duration-300 focus:ring lg:flex-col click-effect"
+          :class="{ 'bg-prime-500': route.path === m.link, 'hover:bg-prime-500/25 focus:bg-prime-500/25': route.path !== m.link }"
           @click="navigateTo(m.link)"
           @keydown.enter="navigateTo(m.link)"
         >
@@ -28,8 +28,8 @@ import IconSvg from '~/components/partial/IconSvg'
 const route = useRoute()
 const menu = [
   { name: 'Beranda', link: '/', icon: 'home' },
-  { name: 'Tentang', link: '/tentang', icon: 'question-mark' },
   { name: 'Layanan', link: '/layanan', icon: 'view-grid' },
+  { name: 'Tentang', link: '/tentang', icon: 'question-mark' },
   { name: 'Kontak', link: '/kontak', icon: 'phone' }
 ]
 </script>
