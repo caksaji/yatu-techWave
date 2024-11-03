@@ -1,75 +1,27 @@
-# Nuxt Minimal Starter
+# TechWave
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Hasil
+Hasil pengerjaan dapat dilihat di [https://yatu-techwave.netlify.app](https://yatu-techwave.netlify.app)
 
-## Setup
+## Deskripsi Proyek
+Proyek ini dibangun untuk memenuhi technical test web developer Inovasi Karya Batam. Output dari proyek ini adalah web *company profile* sebuah perusahaan bernama **TechWave**. Perusahaan ini menyediakan jasa pembuatan produk digital yang berfokus pada *data science*, AI, dan arsitektur digital. Secara umum, website ini terdiri dari penjelasan tentang perusahaan, layanan yang disediakan, kontak, dan beberapa informasi pendukung.
 
-Make sure to install dependencies:
+## Deskripsi Teknis
+- **Framework**: Nuxt.js v3
+- **Styling**: Tailwindcss + LESS Css
+- **State management** (dengan simulasi koneksi ke API)
+- **Reusable component** (efisiensi coding modular)
+- **Animasi** (untuk kebutuhan estetika)
+- **Responsive** (menyesuaikan ukuran layar perangkat)
 
-```bash
-# npm
-npm install
+## Deployment
+Dideploy melalui netlify dan dapat diakses di [https://yatu-techwave.netlify.app](https://yatu-techwave.netlify.app)
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Local Dev
+1. Clone repo ini
+2. Buka repo di local melalui terminal
+3. Install node.js minimal v22.3.0
+4. Install dependencies: `npm install`
+5. Tunggu hingga proses selesai
+6. Jalankan proyek: `npm run dev`
+7. Buka proyek di browser dengan membuka alamat sesuai dengan terminal, biasanya: `localhost:3000`
