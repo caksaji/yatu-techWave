@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section reason bg-gradient-to-br from-gray-800 via-prime-950 to-gray-900 text-white">
+    <div class="section case bg-gradient-to-br from-gray-800 via-prime-950 to-gray-900 text-white">
       <div class="container py-24">
         <div class="relative">
           <div data-aos="fade-right" class="flex items-center gap-2">
@@ -47,6 +47,21 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section reason bg-gradient-to-br from-white via-prime-200 to-gray-100">
+      <div class="container relative py-24">
+        <OrnamentDotCircle color="gray-900" class="absolute top-12 right-0 transform translate-x-1/3 opacity-10" />
+        <div class="relative">
+          <div data-aos="fade-right" class="flex items-center gap-2">
+            <div class="flex-shrink-0 h-px w-full max-w-8 bg-gray-900" />
+            <span class="flex-shrink-0">Kini mulai banyak hal berkaitan dengan AI</span>
+          </div>
+          <SectionTitle data-aos="fade-up" data-aos-delay="300" text="AI Merupakan Sekumpulan Data yang Diolah di Balik Layar sebagai Alat Bantu untuk Memperlancar Banyak Kegiatan"  class="max-w-6xl"/>
+          <div data-aos="fade-up" class="max-w-6xl pt-12 text-xl">
+            Dengan menerapkan AI pada bisnis dan kegiatan anda, diharapkan dapat meningkatkan efisisiensi dan akurasi kegiatan dalam bisnis mulai perencanaan, operasional, pencegahan masalah, hingga pengambilan keputusan dengan biaya yang lebih hemat.
           </div>
         </div>
       </div>

@@ -107,7 +107,7 @@
             <div class="flex-shrink-0 h-px w-full max-w-8 bg-gray-900" />
             <span class="flex-shrink-0">Selanjutnya,</span>
           </div>
-          <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Inilah Solusi yang Kami Tawarkan atas Masalah Anda"  class="max-w-6xl"/>
+          <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Inilah Solusi yang Kami Tawarkan atas Masalah Anda" class="max-w-6xl"/>
           <div data-aos="fade-up" class="flex gap-4 flex-wrap w-full pt-12 md:flex-nowrap sm:gap-0">
             <div v-for="(s, i) in serviceStore.all" :key="i" class="w-full transform duration-300 group sm:w-1/2 md:w-1/4 md:hover:w-2/4">
               <div class="flex gap-4 flex-col justify-between h-full w-full pt-12 pb-4 px-4 border border-gray-900 rounded-xl text-white" :class="{ 'bg-gray-500': i === 0, 'bg-gray-900': i === 1, 'bg-prime-700': i === 2, 'bg-prime-500': i === 3 }">
@@ -168,7 +168,7 @@
             <div class="flex-shrink-0 h-px w-full max-w-8 bg-white" />
             <span class="flex-shrink-0">Tapi kenapa?</span>
           </div>
-          <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Inilah Manfaat Implementasi AI dengan Usaha Anda"  class="max-w-6xl"/>
+          <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Inilah Manfaat Implementasi AI dengan Usaha Anda" class="max-w-6xl"/>
           <div class="pt-12">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:grid-rows-2 sm:grid-flow-col sm:grid-cols-none lg:grid-flow-row lg:grid-cols-2 lg:grid-rows-none">
               <div
@@ -210,7 +210,7 @@
           <div class="flex-shrink-0 h-px w-full max-w-8 bg-gray-900" />
           <span class="flex-shrink-0">Jangan ragu untuk memilih kami</span>
         </div>
-        <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Buktikan Sendiri Apa yang Client Kami Katakan"  class="max-w-6xl"/>
+        <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Buktikan Sendiri Apa yang Client Kami Katakan" class="max-w-6xl"/>
         <div class="flex flex-wrap items-start justify-center pt-12 -m-2">
           <div v-for="(t, i) in testimonialStore.all" :key="i" data-aos="fade-up" :data-aos-delay="(100 * i) + 450" class="flex-shrink-0 h-full w-full p-2 sm:w-1/2 md:w-1/3">
             <div tabindex="0" class="flex flex-col justify-between h-full py-12 px-4 rounded-xl outline-0 bg-gray-200 duration-300 hover:scale-105 hover:shadow-lg focus:scale-105 focus:shadow-lg lg:px-8 xl:px-12">
