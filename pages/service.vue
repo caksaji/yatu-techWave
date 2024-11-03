@@ -66,21 +66,83 @@
         </div>
       </div>
     </div>
-    <div class="section h-32">
-      Hehe
+    <div class="section interested bg-gray-900 text-white text-center">
+      <div class="container space-y-4 py-24">
+        <SectionTitle text="Tertarik dengan Implementasi AI dalam Bisnis?" />
+        <SectionTitle text="Anda di Tempat yang Tepat" />
+        <div class="flex justify-center">
+          <div class="relative">
+            <div class="absolute top-0 left-0 h-full w-full border-2 border-white rounded-full blur-sm animate-ping" />
+            <SpButton color="white" size="lg" border round @click="sectionService.scrollIntoView()">
+              Lihat layanan
+            </SpButton>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ref="sectionService" class="section service overflow-hidden">
+      <div class="container relative">
+        <div class="absolute top-12 -left-1/4 h-[57rem] w-[57rem] border-4 border-prime-600 rounded-full opacity-50 blur-sm sm:top-20 sm:-left-1/2 md:-left-1/3" />
+      </div>
+      <div v-for="(s, i) in serviceStore.all" :key="i" class="bg-gradient-to-br" :class="[i % 2 === 0  ? 'from-white via-prime-200 to-gray-50' : 'from-gray-800 via-prime-950 to-gray-900 text-white']">
+        <div class="container py-24">
+          <div class="flex flex-col gap-8 items-start sm:flex-row">
+            <div data-aos="fade-right" class="flex-shrink-0 w-full aspect-square bg-contain bg-center bg-no-repeat sm:max-w-60 sm:bg-top" :style="{ backgroundImage: `url(/img/illustration/${i === 0 ? 'automation' : i === 1 ? 'forecast' : i === 2 ? 'dev' : 'network'}.svg)` }" />
+            <div class="w-full">
+              <SectionTitle data-aos="fade-up" :text="s.name" class="max-w-6xl"/>
+              <div data-aos="fade-up" data-aos-delay="300" class="pt-12">
+                {{ s.description }}
+              </div>
+              <div data-aos="fade-right" data-aos-delay="600" class="flex justify-end w-full pt-12">
+                <SpButton :color="i % 2 === 0 ? 'black' : 'white'" size="lg" border round @click="$startDiscuss(s.name)">
+                  Cari tahu
+                  <template #icon>
+                    <IconSvg name="arrow-right" class="h-5 w-5" />
+                  </template>
+                </SpButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section custom bg-gradient-to-tr from-prime-600 via-prime-800 to-prime-600 text-white text-center">
+      <div class="container space-y-4 py-24">
+        <div>
+          Tidak ada layanan yang cocok?
+        </div>
+        <SectionTitle text="Mari Diskusikan Kebutuhan Anda" />
+        <div class="flex justify-center">
+          <div class="relative">
+            <div class="absolute top-0 left-0 h-full w-full border-2 border-white rounded-full blur-sm animate-ping" />
+            <SpButton
+              color="white"
+              size="lg"
+              border
+              round
+              class="uppercase"
+              @click="$startDiscuss"
+             >
+              Sekarang
+            </SpButton>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import SectionTitle from '~/components/partial/SectionTitle'
-import SpButton from '~/components/partial/SpButton'
 import OrnamentDotCircle from '~/components/partial/OrnamentDotCircle'
+import SpButton from '~/components/partial/SpButton'
+import IconSvg from '~/components/partial/IconSvg'
 
 definePageMeta({ path: '/layanan' })
 
 useHead({ title: 'Layanan' })
 
+const serviceStore = useServiceStore()
 const problemSolving = [
   {
     p: 'Saya seorang retailer online tapi tingkat konversi yang rendah karena sulit menemukan produk yang tepat untuk pelanggan.',
@@ -95,6 +157,11 @@ const problemSolving = [
     s: 'Dengan menggunakan AI dan algoritma pembelajaran mesin untuk menganalisis transaksi dalam waktu nyata, bank dapat mengidentifikasi pola perilaku yang mencurigakan. Sistem ini memberikan notifikasi otomatis kepada tim keamanan untuk menyelidiki transaksi yang berpotensi curang. Implementasi ini menurunkan jumlah kasus penipuan secara signifikan dan meningkatkan kepercayaan pelanggan.'
   }
 ]
+const sectionService = ref()
 
-const startDiscuss = (about = null) => window.open(`https://wa.me/6281111111111?text=Halo%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20layanan%20${about ? "*" + about + "*" : 'yang%20tersedia'}%2C%20bisakah%20kita%20mulai%20diskusi%3F`)
+onMounted(() => {
+  if (serviceStore.all.length < 1) {
+    serviceStore.getAll()
+  }
+})
 </script>

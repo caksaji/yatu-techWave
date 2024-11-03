@@ -122,7 +122,7 @@
                   </div>
                 </div>
                 <div class="flex justify-end w-full">
-                  <SpButton color="white" border round @click="startDiscuss(s.name)">
+                  <SpButton color="white" border round @click="$startDiscuss(s.name)">
                     Cari tahu
                     <template #icon>
                       <IconSvg name="arrow-right" class="h-5 w-5" />
@@ -144,11 +144,18 @@
                 <div data-aos="fade-right" data-aos-delay="600" class="flex">
                   <div class="flex-shrink-0 relative">
                     <div class="absolute top-0 left-0 h-full w-full border-2 border-prime-600 rounded-full blur-sm animate-ping" />
-                    <SpButton color="prime" size="lg" border round @click="startDiscuss">
+                    <SpButton color="prime" size="lg" border round @click="$startDiscuss">
                       Hubungi kami
                     </SpButton>
                   </div>
-                  <SpButton tabindex="-1" color="prime" size="lg" icon-only round>
+                  <SpButton
+                    tabindex="-1"
+                    color="prime"
+                    size="lg"
+                    icon-only
+                    round
+                    @click="$startDiscuss"
+                  >
                     <template #icon>
                       <IconSvg name="arrow-right" class="h-5 w-5" />
                     </template>
@@ -259,7 +266,7 @@
               border
               round
               class="uppercase"
-              @click="startDiscuss"
+              @click="$startDiscuss"
              >
               Sekarang
             </SpButton>
@@ -298,5 +305,4 @@ onMounted(() => {
 })
 
 const openLink = (link) => window.open(link)
-const startDiscuss = (about = null) => window.open(`https://wa.me/6281111111111?text=Halo%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20layanan%20${about ? "*" + about + "*" : 'yang%20tersedia'}%2C%20bisakah%20kita%20mulai%20diskusi%3F`)
 </script>
