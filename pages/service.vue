@@ -7,29 +7,6 @@
             <div class="flex-shrink-0 h-px w-full max-w-8 bg-white" />
             <span class="flex-shrink-0">Sebelum melanjutkan,</span>
           </div>
-          <!--
-            Sepenting apakah implementasi AI untuk menjalankan bisnis di zaman ini?
-
-            Implementasi AI sangat penting untuk menjalankan bisnis di zaman ini karena beberapa alasan:
-
-            1. **Keunggulan Kompetitif**: AI membantu perusahaan untuk tetap kompetitif dengan meningkatkan efisiensi dan produktivitas. Bisnis yang memanfaatkan AI dapat beradaptasi lebih cepat terhadap perubahan pasar.
-
-            2. **Pengambilan Keputusan yang Lebih Baik**: Dengan analisis data yang kuat, AI memberikan wawasan yang mendalam yang memungkinkan manajer untuk membuat keputusan yang lebih terinformasi.
-
-            3. **Pengalaman Pelanggan yang Ditingkatkan**: AI memungkinkan personalisasi layanan dan produk, yang meningkatkan kepuasan dan loyalitas pelanggan.
-
-            4. **Efisiensi Operasional**: Automatisasi proses bisnis mengurangi waktu dan biaya, memungkinkan karyawan untuk fokus pada tugas yang lebih strategis.
-
-            5. **Inovasi Produk dan Layanan**: AI dapat membantu dalam pengembangan produk baru dengan menganalisis tren dan umpan balik pelanggan, mempercepat siklus inovasi.
-
-            6. **Pengelolaan Risiko**: AI dapat membantu dalam identifikasi dan mitigasi risiko, baik itu dalam aspek keamanan siber maupun manajemen keuangan.
-
-            7. **Skalabilitas**: Dengan solusi berbasis AI, bisnis dapat lebih mudah mengembangkan operasi mereka tanpa proporsional meningkatkan biaya operasional.
-
-            8. **Analisis Pasar yang Mendalam**: AI mampu menganalisis tren pasar dan perilaku konsumen secara real-time, memberikan bisnis keunggulan dalam merespons permintaan pasar.
-
-            Di era digital ini, kemampuan untuk mengintegrasikan AI bukan hanya tentang efisiensi, tetapi juga tentang bertahan dan berkembang dalam lingkungan yang semakin kompetitif. Bisnis yang tidak memanfaatkan teknologi ini berisiko tertinggal. Apakah ada aspek khusus dari implementasi AI yang ingin kamu eksplor lebih lanjut?
-          -->
           <SectionTitle data-aos="fade-up" data-aos-delay="300" text="Pernahkah Terpikirkan ketika..."  class="max-w-6xl"/>
           <div class="pt-12 space-y-8">
             <div class="flex flex-wrap items-start justify-center pt-12 -m-2">

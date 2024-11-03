@@ -254,7 +254,7 @@
     <div class="section discuss bg-gradient-to-tr from-prime-600 via-prime-800 to-prime-600 text-white text-center">
       <div class="container space-y-4 py-24">
         <div>
-          Tunggu apa lagi?
+          Butuh diskusi lebih lanjut?
         </div>
         <SectionTitle text="Mari Diskusikan Kebutuhan Anda" />
         <div class="flex justify-center">
